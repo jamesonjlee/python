@@ -3,6 +3,9 @@ driver_plugin: vagrant
 driver_config:
   require_chef_omnibus: true
 
+provisioner:
+  name: chef_zero
+
 platforms:
 - name: ubuntu-12.10
   driver_config:
@@ -60,3 +63,10 @@ suites:
   run_list:
   - recipe[python]
   - recipe[python_test::test_virtualenv]
+
+- name: dummy_install
+  run_list:
+  - recipe[python_test::test_dummy_install]
+  attributes:
+    python:
+      virtualenv_version: "1.10.1"
