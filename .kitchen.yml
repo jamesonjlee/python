@@ -67,6 +67,3 @@ suites:
 - name: dummy_install
   run_list:
   - recipe[python_test::test_dummy_install]
-  attributes:
-    python:
-      virtualenv_version: "1.10.1"
